@@ -21,9 +21,13 @@ public class AtendimentosAlunos {
 
             switch (opcao) {
                 case 1:
-                    System.out.print("RM do aluno:");
-                    int rm = sc.nextInt();
-                    fila.enqueue(rm);
+                    if(fila.isFull()){
+                        System.out.println("Fila lotada, atenda um aluno para conseguir inserir mais atendimentos.");
+                    } else {
+                        System.out.print("RM do aluno:");
+                        int rm = sc.nextInt();
+                        fila.enqueue(rm);
+                    }
                     break;
                 case 2:
                     if (fila.isEmpty()) {
